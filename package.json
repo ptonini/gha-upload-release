@@ -1,6 +1,6 @@
 {
   "name": "upload-release-action",
-  "version": "2.3.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Upload files to a GitHub release",
   "main": "lib/main.js",
@@ -11,11 +11,11 @@
     "lint": "eslint src/**/*.ts",
     "pack": "ncc build",
     "test": "jest",
-    "all": "npm run build && npm run format && npm run lint && npm run pack && npm test"
+    "all": "export NODE_OPTIONS=--openssl-legacy-provider && npm run build && npm run format && npm run lint && npm run pack && npm test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/svestaro/upload-release-action.git"
+    "url": "git+https://github.com/ptonini/gha-upload-release.git"
   },
   "keywords": [
     "actions",
@@ -24,7 +24,7 @@
     "assets",
     "asset"
   ],
-  "author": "Sven-Hendrik Haase",
+  "author": "Pedro Tonini",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.6",

@@ -51,7 +51,7 @@ jobs:
     - name: Build
       run: cargo build --release
     - name: Upload binaries to release
-      uses: svenstaro/upload-release-action@v2
+      uses: ptonini/gha-upload-release@main
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: target/release/mything
@@ -93,7 +93,7 @@ jobs:
     - name: Build
       run: cargo build --release --locked
     - name: Upload binaries to release
-      uses: svenstaro/upload-release-action@v2
+      uses: ptonini/gha-upload-release@main
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: target/release/${{ matrix.artifact_name }}
@@ -119,7 +119,7 @@ jobs:
     - name: Build
       run: cargo build --release
     - name: Upload binaries to release
-      uses: svenstaro/upload-release-action@v2
+      uses: ptonini/gha-upload-release@main
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: target/release/my*
@@ -148,7 +148,7 @@ jobs:
     - name: Build
       run: cargo build --release
     - name: Upload binaries to release
-      uses: svenstaro/upload-release-action@v2
+      uses: ptonini/gha-upload-release@main
       with:
         repo_name: owner/repository-name
         # A personal access token for the GitHub repository in which the release will be created and edited.
@@ -197,7 +197,7 @@ jobs:
           echo "::set-output name=RELEASE_BODY::$r"         # <--- Set environment variable
 
       - name: Upload Binaries to Release
-        uses: svenstaro/upload-release-action@v2
+        uses: ptonini/gha-upload-release@main
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref }}

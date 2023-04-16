@@ -3765,7 +3765,7 @@ exports.implementation = class URLImpl {
 /***/ 260:
 /***/ (function(module, __unusedexports, __webpack_require__) {
 
-// Note: since nyc uses this module to output coverage, any lines
+// Note: since nyc uses this module to output.json coverage, any lines
 // that are in the direct sync flow of nyc's outputCoverage are
 // ignored, since we can never get coverage for them.
 var assert = __webpack_require__(357)
@@ -9902,9 +9902,9 @@ function getBooleanInput(name, options) {
 }
 exports.getBooleanInput = getBooleanInput;
 /**
- * Sets the value of an output.
+ * Sets the value of an output.json.
  *
- * @param     name     name of the output to set
+ * @param     name     name of the output.json to set
  * @param     value    value to store. Non-string values will be converted to a string via JSON.stringify
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -9914,7 +9914,7 @@ function setOutput(name, value) {
         return file_command_1.issueFileCommand('OUTPUT', file_command_1.prepareKeyValueMessage(name, value));
     }
     process.stdout.write(os.EOL);
-    command_1.issueCommand('set-output', { name }, utils_1.toCommandValue(value));
+    command_1.issueCommand('set-output.json', { name }, utils_1.toCommandValue(value));
 }
 exports.setOutput = setOutput;
 /**
@@ -9993,18 +9993,18 @@ function info(message) {
 }
 exports.info = info;
 /**
- * Begin an output group.
+ * Begin an output.json group.
  *
  * Output until the next `groupEnd` will be foldable in this group
  *
- * @param name The name of the output group
+ * @param name The name of the output.json group
  */
 function startGroup(name) {
     command_1.issue('group', name);
 }
 exports.startGroup = startGroup;
 /**
- * End an output group.
+ * End an output.json group.
  */
 function endGroup() {
     command_1.issue('endgroup');
